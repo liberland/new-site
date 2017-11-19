@@ -1,0 +1,15 @@
+{
+    "ssl": {
+        "key": "/path/to/key.pem",
+        "cert": "/path/to/cert.pem"
+    },
+
+    "session": {
+        "secret": "secret to use for express-session"
+    },
+
+    "languages" : {
+        "en": ["us", "uk"],
+        "cz": ["cz"]
+    }
+}

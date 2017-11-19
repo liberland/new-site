@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= "Liberland"
+        link(rel="shortcut icon", href="/images/favicon.ico")
+        if deviceType == "desktop"
+            link(href="/css/desktop.css", rel="stylesheet")
+        if deviceType == "tablet"
+            link(href="/css/tablet.css", rel="stylesheet")
+        if deviceType == "phone"
+            link(href="/css/phone.css", rel="stylesheet")
+
+
+script(src="/js/jquery-3.2.1.min.js")
+script(src="/js/all.js")
+
+if deviceType == "phone"
+    //- Needed to be able to swipe in/out.
+    script(src="/js/phone.js")
