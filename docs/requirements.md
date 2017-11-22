@@ -10,6 +10,8 @@ The new site should:
 
 - Have a page for the Constitution.
 
+- Have a page for the laws of the Provisional Government.
+
 - Have a page for viewing news from Facebook/Twitter, as well as events from Liberland Calendar.
 
 - Have a page for viewing Liberland's finances.

@@ -1,0 +1,18 @@
+/* all.css: Loads on all devices. Should define commin elements. */
+.centered {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 50%;
+}
+
+td {
+    text-align: left;
+}
+
+table, tr, td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}

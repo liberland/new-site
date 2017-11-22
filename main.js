@@ -14,8 +14,8 @@ var device = require("express-device"); //Gets the device type.
 var session = require("express-session"); //Stores data for each user.
 
 //Custom requires.
-var accountRouter = require("./routers/account.js").router;
-//var infoRouter = require("./routers/info.js").router; //Not needed for now.
+//var accountRouter = require("./routers/account.js").router; //Not needed for now.
+var infoRouter = require("./routers/info.js").router;
 
 //GeoIP.
 var geoip = require("geoip-lite"); //Library to get the user's location.
