@@ -1,6 +1,4 @@
 .node_repl_history
 .npm
 node_modules
-npm-debug.log*
-*.log
 test*
