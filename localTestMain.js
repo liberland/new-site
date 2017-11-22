@@ -1,3 +1,9 @@
+//THIS IS FOR TESTING ON A LOCAL MACHINE. IT RUNS WITH NO SSL OVER PORT 80.
+//IT ALSO DOESN'T INCLUDE THE HTTP REDIRECT SETUP OR GEOIP LOOKUP.
+//(COULD DO PORT 79->80 TO PROVE IT WORKS BUT IT WON'T BREAK OVER TIME AND WORKS NOW)
+//(GEOIP WON'T WORK ON A LOCAL IP; WILL AUTO TO "EN")
+//DO NOT DEPLOY THIS ANYWHERE.
+
 //Require everything we need.
 
 //Node STDLib requires.
@@ -14,7 +20,7 @@ var session = require("express-session"); //Stores data for each user.
 
 //Custom requires.
 //var accountRouter = require("./routers/account.js").router; //Not needed for now.
-var infoRouter = require("./routers/info.js").router;
+var info = require("./routers/info.js");
 
 //GeoIP.
 var geoip = require("geoip-lite"); //Library to get the user's location.
@@ -47,25 +53,9 @@ siteServer.use(session({ //Enable session for tracking user's language and who t
 siteServer.use((req, res, next) => {
     if (req.session.language) { //If the language is already is set...
         req.language = req.session.language; //Set it.
-    } else if (req.ip.includes("127.0.0.1") ||  //Else, if it's a local IP...
-        req.ip.includes("localhost") ||
-        req.ip.substr(0, 3) === "192" ||
-        req.ip === "::1") {
+    } else {
         req.session.language = "en"; //Use "en".
         req.language = "en";
-    } else { //Else, get the country the user is in and go through each language to see what language that country is assigned to.
-        var countryCode = geoip.lookup(req.ip).country.toLowerCase();
-        for (var lang in settings.languages) {
-            if (settings.languages[lang].indexOf(country) > -1) {
-                req.session.language = lang;
-                req.language = lang;
-            }
-        }
-
-        if (!(req.language)) { //If req.language is still not set, default to "en".
-            req.session.language = "en";
-            req.language = "en";
-        }
     }
 
     switch (req.device.type) {
@@ -94,8 +84,8 @@ siteServer.use("/css", express.static(path.join(__dirname, "public", "css")));
 siteServer.use("/js", express.static(path.join(__dirname, "public", "js")));
 siteServer.use("/images", express.static(path.join(__dirname, "public", "images")));
 
-//Add in the various routers.
-siteServer.use("/", infoRouter);
+//Setup and add in the various routers.
+siteServer.use("/", info.genRouter(settings.info.pages));
 
 siteServer.get("*", (req, res) => { //Capture every GET route not already handled.
     res.status(404).render(req.language + "/404.pug"); //Send a 404 page.

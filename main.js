@@ -15,7 +15,7 @@ var session = require("express-session"); //Stores data for each user.
 
 //Custom requires.
 //var accountRouter = require("./routers/account.js").router; //Not needed for now.
-var infoRouter = require("./routers/info.js").router;
+var info = require("./routers/info.js");
 
 //GeoIP.
 var geoip = require("geoip-lite"); //Library to get the user's location.
@@ -48,12 +48,6 @@ siteServer.use(session({ //Enable session for tracking user's language and who t
 siteServer.use((req, res, next) => {
     if (req.session.language) { //If the language is already is set...
         req.language = req.session.language; //Set it.
-    } else if (req.ip.includes("127.0.0.1") ||  //Else, if it's a local IP...
-        req.ip.includes("localhost") ||
-        req.ip.substr(0, 3) === "192" ||
-        req.ip === "::1") {
-        req.session.language = "en"; //Use "en".
-        req.language = "en";
     } else { //Else, get the country the user is in and go through each language to see what language that country is assigned to.
         var countryCode = geoip.lookup(req.ip).country.toLowerCase();
         for (var lang in settings.languages) {
@@ -95,9 +89,9 @@ siteServer.use("/css", express.static(path.join(__dirname, "public", "css")));
 siteServer.use("/js", express.static(path.join(__dirname, "public", "js")));
 siteServer.use("/images", express.static(path.join(__dirname, "public", "images")));
 
-//Add in the various routers.
-//siteServer.use("/account", accountRouter);
-siteServer.use("/", infoRouter);
+//Setup and add in the various routers.
+//siteServer.use("/account", account.router);
+siteServer.use("/", info.genRouter(settings.info.pages));
 
 siteServer.get("*", (req, res) => { //Capture every GET route not already handled.
     res.status(404).render(req.language + "/404.pug"); //Send a 404 page.

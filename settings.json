@@ -1,4 +1,9 @@
 {
+    "languages" : {
+        "en": ["us", "uk"],
+        "cz": ["cz"]
+    },
+
     "ssl": {
         "key": "/path/to/key.pem",
         "cert": "/path/to/cert.pem"
@@ -8,8 +13,14 @@
         "secret": "secret to use for express-session"
     },
 
-    "languages" : {
-        "en": ["us", "uk"],
-        "cz": ["cz"]
+    "info": {
+        "pages": [
+            "about",
+            "constitution",
+            "contact",
+            "finances",
+            "laws",
+            "news"
+        ]
     }
 }

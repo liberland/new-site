@@ -1,43 +1,21 @@
-var router = require("express").Router();
+module.exports = {
+    genRouter: (pages) => {
+        //Create a new router.
+        var router = require("express").Router();
 
-function genPugOptions(req) {
-    return (
-        req.session.username ? {
-            deviceType: req.deviceType,
-            username: req.session.username
-        } : {
-            deviceType: req.deviceType
-        }
-    );
-}
+        //Load the index file to the site root.
+        router.get("/", (req, res) => {
+            //Render the file.
+            res.render(req.language + "/info/index.pug", {deviceType: req.deviceType});
+        });
 
-router.get("/", (req, res) => {
-    res.render(req.language + "/info/index.pug", genPugOptions(req)).end();
-});
+        //Load every other page to their respective spots.
+        pages.forEach((page) => {
+            router.get("/" + page, (req, res) => {
+                res.render(req.language + "/info/" + page + ".pug", {deviceType: req.deviceType});
+            });
+        });
 
-router.get("/about", (req, res) => {
-    res.render(req.language + "/info/about.pug", genPugOptions(req)); //Render the file.
-    res.end();
-});
-
-router.get("/constitution", (req, res) => {
-    res.render(req.language + "/info/constitution.pug", genPugOptions(req)).end(); //Render the file.
-});
-
-router.get("/contact", (req, res) => {
-    res.render(req.language + "/info/contact.pug", genPugOptions(req)).end(); //Render the file.
-});
-
-router.get("/finances", (req, res) => {
-    res.render(req.language + "/info/finances.pug", genPugOptions(req)).end(); //Render the file.
-});
-
-router.get("/laws", (req, res) => {
-    res.render(req.language + "/info/news.pug", genPugOptions(req)).end(); //Render the file.
-});
-
-router.get("/news", (req, res) => {
-    res.render(req.language + "/info/news.pug", genPugOptions(req)).end(); //Render the file.
-});
-
-module.exports.router = router;
+        return router;
+    }
+};
