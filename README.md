@@ -28,7 +28,9 @@ Payment will only be made in merits.
 
 The payment for coders is based on accepted amount of unique lines of code (not comments, blank lines or one line applied to ten files). The Repository's managers will condense code if it's expanded and remove redundant code if it's added in. Do not try to cheat the system.
 
-Currently, the going rate is still being decided, yet it is estimated to be 1 merit per 2 lines of code.
+Currently, the going rate for coders is still being decided, yet it is estimated to be 1 merit per 2 lines of code.
+
+The payment for translators will be decided on a case by case. Please get in contact with us to discuss how you can help us with translations.
 
 ## Discord:
 
