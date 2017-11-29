@@ -30,8 +30,6 @@ The payment for coders is based on accepted amount of unique lines of code (not 
 
 Currently, the going rate for coders is still being decided, yet it is estimated to be 1 merit per 2 lines of code.
 
-The payment for translators will be decided on a case by case. Please get in contact with us to discuss how you can help us with translations.
-
 ## Discord:
 
 The team and contributors discuss on a discord server. If you want to know how you can help and talk with people working on the site, join us! We'll be happy to talk to you and help you get started on helping us. [Click here to join.](https://discord.gg/SsFcuTZ)
