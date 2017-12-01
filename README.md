@@ -28,7 +28,9 @@ Payment will only be made in merits.
 
 The payment for coders is based on accepted amount of unique lines of code (not comments, blank lines or one line applied to ten files). The Repository's managers will condense code if it's expanded and remove redundant code if it's added in. Do not try to cheat the system.
 
-Currently, the going rate for coders is still being decided, yet it is estimated to be 1 merit per 2 lines of code.
+Currently, the going rate for coders is 1 merit per 2 lines of code.
+
+The Constitution files are not eligible for payment due to their immense size, along with text that's from this repository. If a line is less than ten characters (ignoring text and blank space), it will be added to the character count of the next line (and not counted in the line count).
 
 ## Discord:
 
