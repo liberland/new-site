@@ -16,6 +16,8 @@ The new site should:
 
 - Have a page for viewing Liberland's finances.
 
+- Have a page for donations
+
 - Have a page to get contact info for Liberland and Liberland's offices.
 
 That is it. We may, after this, add in:
