@@ -32,7 +32,8 @@ var settings = JSON.parse(fs.readFileSync("./settings.json"));
 var siteServer = express();
 siteServer.set("etag", false); //Disable etag as it leaks system info.
 siteServer.set("view engine", "pug"); //Set the view engine to Pug.
-siteServer.set("views", path.join(__dirname, "public")); // Set Pug to work off the public files.
+siteServer.set("view options", {debug: true}); //Enable Pug debugging.
+siteServer.set("views", path.join(__dirname, "public")); //Set Pug to work off the public files.
 
 //Add middleware.
 siteServer.use(helmet({ //Add in helmet for security.
