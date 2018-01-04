@@ -38,4 +38,4 @@ The Constitution files are not eligible for payment due to their immense size, a
 
 ## Discord:
 
-The team and contributors discuss on a discord server. If you want to know how you can help and talk with people working on the site, join us! We'll be happy to talk to you and help you get started on helping us. [Click here to join.](https://discord.gg/SsFcuTZ)
+The team talks on a discord server. If you want to know how you can help and talk in realtime with people working on the site, join us! We'll be happy to talk to you and help you get started on helping us. [Click here to join.](https://discord.gg/SsFcuTZ)
