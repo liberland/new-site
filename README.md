@@ -8,7 +8,7 @@ If you're questioning why someone would work for just merits, it's because it's 
 
 Also, do not submit code that doesn't work or break something else.
 
-## Running the code:
+## Installing the server:
 
 Download the code and enter the root folder. After editing "/settings.json"...
 
@@ -19,6 +19,10 @@ Download the code and enter the root folder. After editing "/settings.json"...
 `npm run-script updatedb`
 
 `cd ../../`
+
+`mkdir public/css`
+
+## Running the server:
 
 `node main.js`
 

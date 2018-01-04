@@ -1,5 +1,6 @@
 .node_repl_history
 .npm
 node_modules
-test*
+public/css
 *.css
+test*
