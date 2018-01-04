@@ -18,15 +18,47 @@ var compression = require("compression"); //Compresses pages to save bandwith.
 var device = require("express-device"); //Gets the device type.
 var session = require("express-session"); //Stores data for each user.
 
-//Custom requires.
-//var accountRouter = require("./routers/account.js").router; //Not needed for now.
-var info = require("./routers/info.js");
+//CSS.
+var sass = require("node-sass");
+var cssMin = new (require("clean-css"))({
+    level: 2,
+    compatibility: "ie8"
+});
 
 //GeoIP.
 var geoip = require("geoip-lite"); //Library to get the user's location.
 
+//Custom requires.
+//var accountRouter = require("./routers/account.js").router; //Not needed for now.
+var info = require("./routers/info.js");
+
 //Load the settings.
 var settings = JSON.parse(fs.readFileSync("./settings.json"));
+
+//Compile the SCSS.
+function compileSCSS() {
+    //Get all the SCSS files.
+    fs.readdir(path.join(__dirname, "public", "scss"), async (err, files) => {
+        //Go through each.
+        files.forEach(async (scssFile) => {
+            //Compile the SCSS.
+            sass.render({
+                file: path.join(__dirname, "public", "scss", scssFile),
+            }, async (err, sassRes) => {
+                    //Save the CSS.
+                    fs.writeFile(
+                        path.join(__dirname, "public", "css", (scssFile.split(".")[0] + ".css")),
+                        cssMin.minify(sassRes.css.toString()).styles,
+                        async ()=>{}
+                    );
+            });
+        });
+    });
+    
+    //Compile every hour.
+    setTimeout(compileSCSS, 60*60*1000);
+}
+compileSCSS();
 
 //Create the server and configure it.
 var siteServer = express();
@@ -86,6 +118,7 @@ siteServer.use("/js", express.static(path.join(__dirname, "public", "js")));
 siteServer.use("/images", express.static(path.join(__dirname, "public", "images")));
 
 //Setup and add in the various routers.
+//siteServer.use("/account", account.router);
 siteServer.use("/", info.genRouter(settings.info.pages));
 
 siteServer.get("*", (req, res) => { //Capture every GET route not already handled.
@@ -104,4 +137,4 @@ function errorFix(err, req, res, next) { //Try/catch safety wrapper.
     }
 }
 
-http.createServer(siteServer).listen(80); //Listen on the HTTP port.
+http.createServer(siteServer).listen(8080); //Listen on the HTTP port.

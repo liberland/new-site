@@ -2,7 +2,7 @@
 
 This is the repository for Liberland's new site. Upon completion, it will be put up on [liberland.org](https://liberland.org).
 
-We invite the community to help and contribute. We're looking for people who know Node, JavaScript, Express, Pug, CSS, and more. We also don't need just coders but need some translators too! People who do make accepted contributions will receive merits for their work.
+We invite the community to help and contribute. We're looking for people who know Node, JavaScript, Express, Pug, SCSS, and more. We also don't need just coders but need some translators too! People who do make accepted contributions will receive merits for their work.
 
 If you're questioning why someone would work for just merits, it's because it's not just merits. It's a chance to demonstrate the advantages of modern technology. It's a chance for the community to build the best site they can for the community. It's a chance to be able to say "I worked on the website of a nation."
 

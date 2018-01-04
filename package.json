@@ -1,21 +1,23 @@
 {
     "name": "liberland-site",
     "description": "The New Liberland Site",
-    "version": "0.0.1",
+    "version": "0.3.0",
     "main": "main.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/"
+        "url": "https://github.com/liberland/new-site"
     },
     "author": "Liberland and the Community; Spearheaded by Luke Parker.",
     "license": "MIT",
     "dependencies": {
-        "express": "^4.16.2",
-        "helmet": "^3.9.0",
+        "clean-css": "^4.1.9",
         "compression": "^1.7.1",
+        "express": "^4.16.2",
         "express-device": "^0.4.2",
         "express-session": "^1.15.6",
         "geoip-lite": "^1.2.1",
+        "helmet": "^3.9.0",
+        "node-sass": "^4.7.2",
         "pug": "^2.0.0-rc.4"
     }
 }
