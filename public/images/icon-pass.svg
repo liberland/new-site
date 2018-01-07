@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="125px" height="125px" viewBox="47.75 -14.25 125 125" enable-background="new 47.75 -14.25 125 125" xml:space="preserve">
+<title>icon-pass</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="icon-pass" transform="translate(-25.000000, -12.000000)">
+		<rect id="Rectangle" x="72.75" y="-2.25" fill="none" width="125" height="125"/>
+		<path id="Rectangle-11" fill="#35373A" d="M97.75,9.75h71l0,0c2.762,0,5,2.239,5,5v92l0,0c0,2.762-2.238,5-5,5h-71V9.75z"/>
+		<path id="Rectangle-18" fill="#FFCB05" d="M130.85,96.75h-7.1v-6h24v6h-7.1c-0.464-2.282-2.481-4-4.9-4
+			S131.313,94.468,130.85,96.75z M130.85,98.75c0.464,2.282,2.481,4,4.9,4s4.437-1.718,4.9-4h7.1v6h-24v-6H130.85z M135.75,100.75
+			c-1.656,0-3-1.344-3-3s1.344-3,3-3s3,1.344,3,3S137.406,100.75,135.75,100.75z"/>
+		<circle id="Oval-3" fill="none" stroke="#FFFFFF" stroke-width="2" cx="136.25" cy="41.25" r="19.5"/>
+		<rect id="Rectangle-17" x="116.75" y="40.75" fill="#FFFFFF" width="40" height="2"/>
+		<ellipse id="Oval-3-Copy" fill="none" stroke="#FFFFFF" stroke-width="2" cx="136.25" cy="41.25" rx="7.5" ry="19.5"/>
+	</g>
+</g>
+</svg>

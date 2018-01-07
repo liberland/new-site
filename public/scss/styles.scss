@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
+
+@mixin gradient($start,$end){
+	background: first;
+	background: -moz-linear-gradient(top, $start 0%, $end 100%);
+	background: -webkit-linear-gradient(top, $start 0%, $end 100%);
+	background: linear-gradient(to bottom, $start 0%, $end 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='start', endColorstr='end',GradientType=0 );
+}
+
+$yellow: #FFCB05;
+$yellow-d: #F1C823;
+$gray-d: #35373A;
+$gray-m: #555658;
+$gray-l: #d0d8de;
+
+$dark-blue: #13111f;
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (min-width: 768px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: 992px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+ 
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}
+
+
+@mixin stripes($color, $angle) {
+  border: 2px solid $color;
+    box-shadow: inset 0 0 50px rgba($color, .5);
+    background-size: 6px 6px;
+    background-color: white;
+    background-image: linear-gradient($angle,
+                      white 45%, rgba($color,.25) 46%, 
+                      rgba($color,.25) 54%, white 55%);
+}
+
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@import "partials/table.scss";
+@import "partials/spraysheet.scss";
+@import "partials/paragraph.scss";
+@import "partials/elements.scss";
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Alfa Slab One', serif;
+}
+h1 {
+	color: $yellow !important;
+	font-size: 60px;
+	margin: 80px 0 0 !important;
+}
+h2 {
+	color: white;
+	font-family: sans-serif;
+	font-size: 20px;
+    margin: 5px 0;
+    text-shadow: 0 0 20px rgba(black,.5);
+}
+h3 {
+	font-size: 32px;
+	font-weight: 200;
+	margin: 0 0 35px;
+}
+h4 {
+	font-size: 20px;
+	font-weight: 200;
+	margin: 5px 0;
+}
+h5 {
+	font-size: 16px;
+	line-height: 22px;
+	margin: 5px 0;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid $gray-l;
+}
+
+a {
+	//background: $yellow;
+	box-shadow: inset 0 -2px 0 $yellow;
+	color: black;
+	transition: all .5s;
+	&:hover {
+		box-shadow: inset 0 -30px 0 $yellow;
+		text-decoration: none;
+	}
+}
+
+.circ {
+	border-radius: 100%;
+}
+
+button {
+    
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 25px 30px;
+    border-radius: 3px;
+    
+    transition: all .5s;
+    &.btn-more {
+	    color: $gray-d;
+	    border: none;
+	    background-image: linear-gradient(to top, rgba($yellow-d,1) 0%,rgba($yellow-d,0) 100%);
+	    background-color: $yellow;
+	    &:hover {
+	        color: black;
+		      background-color: #FFED15;
+		      box-shadow: 0 2px 5px rgba(black,.15);
+        }
+    }
+    &.btn-ghost {
+	    border: 3px solid $yellow;
+	    background: transparent;
+	    color: $yellow;
+	    &:hover {
+	        color: black;
+	        box-shadow: 0 2px 5px rgba(black,.15),
+	              inset 0 0 25px 50px $yellow;
+        }
+    }
+}
+.btn-ellipsis {
+	
+}
+nav.navbar {
+	height: 50px;
+	border-radius: 0;
+	border: none;
+	background: linear-gradient(to bottom, $yellow 39%,black 40%,black 60%,$yellow 61%);
+	
+	a.navbar-brand {
+		    padding: 10px 15px;
+		    
+		    &:hover {
+				background: none;
+				box-shadow: none;
+				img {
+					box-shadow: 0 0 5px rgba(black,.5);
+				}
+			}
+	}
+	
+	ul.nav.navbar-nav {
+		list-style-type: none;
+		padding-left: 0;
+		margin: 0;
+		li {
+			display: inline-block;
+			font-family: 'Alfa Slab One', serif;
+			margin-left: 10px;
+			a {
+				padding: 15px 10px;
+				background: $yellow;
+				box-shadow: none;
+				font-size: 18px;
+				color: black;
+				transition: all .5s;
+				&:hover {
+					box-shadow: inset 0 -5px 0 black;
+					background: $yellow;
+				}
+			}
+			&.active {
+				//background: black;
+				a{ 
+					background: black;
+					color: $yellow;
+					box-shadow: inset 0 0 0px 5px $yellow;
+				}
+			}
+			ul {
+				padding: 0 0 0 0;
+				li {
+					display: block;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+section{
+	padding: 50px 0;
+	&.bg-yellow{
+		h3 { color: white;}
+		background-color: $yellow;
+		button.btn-more{
+			background-color: white;
+			background-image: none;
+			color: $gray-d;
+		}
+		.btn-ellipsis {
+			background: white;
+			box-shadow: none;
+			color: $yellow;
+			border-radius: 3px;
+			padding: 0px 5px;
+			&:hover {
+				color: $gray-d;
+			}
+		}
+	}
+	&.bg-light{
+	}
+	&.bg-dark{
+		background-color: $gray-d;
+		color: white;
+	}
+}
+body {
+	&.landing{
+		header {
+			
+ 			background: $gray-m url(../images/hero.svg) center center no-repeat;
+			background-size: cover;
+			height: 100vh;
+			max-height: 200vw;
+			box-shadow: inset 0 0 70px rgba(black,.35);
+			.container {
+				height: 100%;
+				position: relative;
+				h1 {
+					text-shadow: 0 0 20px rgba(black,.25);
+					margin: 80px 0;
+				}
+				.to-bottom {
+					position: absolute;
+					bottom: 200px;
+				    width: 100%;
+				}
+			}
+			
+		}
+		#what-headline {
+			background: url(../images/wave.svg) center top;
+			background-size: cover;
+			margin-top: -106px;
+			padding: 50px 0 30px;
+			h3 {
+				margin: 0;
+			}
+		}
+		#what {
+			
+				padding: 0;
+			#gmap {
+				height: 100vh;
+			}
+			#overmap {
+				height: 100vh;
+				margin-top: -100vh;
+				position: relative;
+				.to-bottom {
+					position: absolute;
+					bottom: 0;
+				    left: 10px;
+				    right: 10px;
+				}
+			}
+		}
+		#mission {
+			background: $yellow url(../images/mission.svg) center center no-repeat;
+			background-size: cover;
+		}
+		#products {
+			a {
+				text-decoration: none;
+				box-shadow: none;
+				.img-holder{
+					width: 125px;
+					height: 125px;
+					margin: auto;
+				}
+				h5,p { color: $gray-d}
+				&.e-res{
+					.img-holder{ background-image: url(../images/icon-e-res.svg) }
+					&:hover .img-holder{ background-image: url(../images/icon-car-animated.svg) }
+				}
+				&.pass{
+					.img-holder{ background-image: url(../images/icon-pass.svg) }
+					&:hover .img-holder{ background-image: url(../images/icon-car-animated.svg) }
+				} 
+				&.comp{
+					.img-holder{ background-image: url(../images/icon-comp.svg) }
+					&:hover .img-holder{ background-image: url(../images/icon-comp-animated.svg) }
+				} 
+				&.car{
+					.img-holder{ background-image: url(../images/icon-car.svg) }
+					&:hover .img-holder{ background-image: url(../images/icon-car-animated.svg) }
+				} 
+				
+			}
+		}
+		#government {
+			overflow: hidden;
+			position: relative;
+			#particles-js {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: $gray-d;
+				margin-top: -50px;
+			}
+			canvas {
+				display: block;
+				vertical-align: bottom;
+			}
+			.row.columns>div {
+				padding-bottom: 20px;
+			}
+			a{
+				
+				div.circ {
+					width: 210px;
+					height: 210px;
+					border: 5px solid $yellow;
+					margin:auto;
+					img {
+						width: 200px;
+						height: 200px;
+						
+						filter: grayscale(100%) 
+								brightness(135%)
+								contrast(120%);
+						transition: all .25s;
+					}
+				}
+				h5, p {
+					color: white;
+					transition: all .25s;
+				}
+				
+				&:hover {
+					div.circ {
+						img {
+							filter: none;
+						}
+					}
+					h5, p {
+						color: $yellow;
+					}
+				}
+			}
+		}
+		#partners {
+			background: linear-gradient(rgba(#FAFAFA,1) 50%, rgba(#EDEDED,0) 50%);
+			background-size: 90px;
+			padding: 0;
+			.container {
+				background: url(../images/romb.svg) center center;
+				background-size: cover;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				a{
+					box-shadow: none;
+					img {
+						width: 100%;
+						max-width: 100px;
+						filter: grayscale(100%);
+					}	
+				}
+			}
+		}
+		#news {
+			h3 {
+				background-image: linear-gradient(to bottom, $yellow 39%,white 40%,white 60%,$yellow 61%);
+				text-shadow: 8px 2px 0px $yellow, 8px -2px $yellow, -9px 2px $yellow, 14px -7px $yellow, 14px -2px $yellow, -16px 0px $yellow;
+			}
+			a {
+				box-shadow: none;
+				img {
+					width: 100%;
+					filter: grayscale(100%);
+					
+				}
+				color: $gray-d;
+				&:hover{
+					color: black;
+					img {filter: grayscale(0%);}
+				}
+			}
+			
+		}
+		#media {
+			a{ 
+				box-shadow: none;
+				img {
+				    transition: all 200ms ease-in-out;
+				    filter: grayscale(100%);
+				    max-width: 200px;
+				    width: 100%;
+				    margin: 20px auto;
+			    }
+			    &:hover img {
+				    filter: grayscale(0%);
+			    }
+			}
+		}
+		footer {
+			background: $gray-d;
+			color: white;
+			padding: 50px 0 30px;
+			border-top: 5px solid $yellow;
+			
+			ul {
+				list-style-type: none;
+				padding-left: 0;
+				li{
+					font-size: 16px;
+					a{
+						box-shadow: none;
+					}
+				}
+			}
+			a{ 
+				color: $yellow;
+				&:hover {
+					color: white;
+				}
+			}
+			input {
+				border: 3px solid $yellow;
+				border-right: none;
+				border-radius: 3px;
+				padding: 6px 10px;
+				height: auto;
+				background: $gray-m;
+				color: $gray-l;
+				&::placeholder {
+					color: $gray-l;
+					opacity: .3;
+				}
+				&:focus { 
+				    background-color: $gray-l;
+				    border: 3px solid $yellow;
+					border-right: none;
+				    outline: $yellow;
+				    box-shadow: inset 0 0 2px rgba($yellow,.25), 0 0 2px rgba($yellow,.25);
+				    color: $gray-d;
+				}
+			}
+		}
+	}
+}
+
+// animatecss delays
+
+$time: .25s;
+.wait1{
+	animation-delay: 1*$time;
+}
+.wait2{
+	animation-delay: 2*$time;
+}
+.wait3{
+	animation-delay: 3*$time;
+}
+.wait4{
+	animation-delay: 4*$time;
+}
+@include breakpoint(sm){
+	[class^="wait"] {
+		animation-delay: 0;
+	}
+}

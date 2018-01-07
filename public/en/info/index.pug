@@ -1,3 +1,313 @@
 include ./base.pug
 
+<<<<<<< HEAD
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title Liberland
+    meta(name='description', content='Official website of Liberland')
+    meta(name='author', content='Liberland IT')
+    link(rel='stylesheet', href='css/fontello.css')
+    //if lt IE 9
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCWvWDqzT2OjYMF3tJpiW0rZe-JKcGhnpE')
+    script(src='https://code.jquery.com/jquery-1.12.4.min.js')
+    script(src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet prefetch', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css')
+    script(src='https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js')
+    link(rel='stylesheet', href='css/styles.css?v=1.0')
+    script(type='text/javascript', src='js/script.js')
+  body.landing
+    header
+      nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#')
+              img(src='images/coatofarms.svg', width='24')
+          #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right
+              li.active
+                a(href='#news') News
+              li
+                a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                  | About
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='about.html') Liberland
+                  li
+                    a(href='constitution.html') Constitution
+                  li
+                    a(href='laws.html') Laws
+                  li
+                    a(href='finances.html') Finances
+              li
+                a(href='contact.html') Contact
+              li
+                a(href='constitution.html') Log In
+              //
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">En<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">En</a></li>
+                <li><a href="#">Cz</a></li>
+                </ul>
+                </li>
+          // /.nav-collapse
+        // /.container-fluid
+      .container
+        .row
+          .col-md-12
+            h1.text-left Liberland
+            h2 The Modern Developing Country
+        .row.to-bottom.animated.fadeInUp
+          .col-md-12.text-center
+            button.btn.btn-lg.btn-ghost Join Us
+    section#what-headline
+      .container
+        .row
+          .col-md-6.col-md-offset-6
+            h3.text-center What is Liberland?
+    section#what
+      #gmap
+      #overmap.container.wow.fadeInRight
+        .row.to-bottom
+          .col-md-6.col-md-offset-6
+            .panel.panel-default
+              .panel-body
+                p.subtitle
+                  strong The Free Republic of Liberland
+                  |  is a sovereign state located between Croatia and Serbia on the west bank of the Danube river.
+                p
+                  | Liberland came into existence due to a border dispute between Croatia and Serbia. This area along the west bank of the Danube river is not claimed by Croatia, Serbia or any other country. It was therefore 
+                  a(href='#') terra nullius
+                  | , a no man’s land, until 
+                  strong Vít Jedlička
+                  |  seized the opportunity and on 
+                  strong 13 April 2015
+                  |  formed a new state in this territory – Liberland. Its total area of approximately 7 km² is now the third smallest sovereign state, after the Vatican and Monaco.
+                button.btn.btn-more.center-block Learn More
+    section#mission.bg-yellow
+      .container
+        .row
+          .col-md-6
+            h3.text-right Our Mission
+          .col-md-6.wow.fadeInUp
+            p
+              | Free the world by setting an example and creating all necessary tools to govern free economic zones. Bring the prosperity and set example for other governments. More text will come here. More text to add to describe it but not more than this. Or maybe yes, we will see how it looks like...
+            button.btn.btn-more.center-block Learn More
+    section#products.bg-light
+      .container
+        .row
+          .col-md-12
+            h3.text-center.center-block Products & Services
+        .row.text-center
+          .col-md-6.col-lg-3.wow.fadeInUp
+            a.eres(href='#')
+              img(src='images/icon-eres.svg')
+              h5 e-Residecy
+              p
+                | Register your car in Liberland and your own plates. Some more text to add to describe it but not more than this.
+          .col-md-6.col-lg-3.wow.fadeInUp.wait1
+            a.pass(href='#')
+              img(src='images/icon-pass.svg')
+              h5 Citizenship
+              p
+                | Become a citizen and enjoy full list of Liberland services. Some more text to add to describe it but not more than this.
+          .col-md-6.col-lg-3.wow.fadeInUp.wait2
+            a.comp(href='#')
+              img(src='images/icon-comp.svg')
+              h5 Company Registry
+              p
+                | Register your company in Liberland and enjoy no taxes and good legal frame. Some more text to add to describe it but not more than this.
+          .col-md-6.col-lg-3.wow.fadeInUp.wait3
+            a.car(href='#')
+              // <div class="img-holder"></div>
+              img(src='images/icon-car.svg')
+              h5 Car Registry
+              p
+                | Register your car in Liberland and your own plates. Some more text to add to describe it but not more than this.
+        .row
+          .col-md-12
+            button.btn.btn-more.center-block More Products & Services
+    section#government.bg-dark
+      #particles-js
+      .container.wow.fadeIn
+        .row
+          .col-md-12
+            h3.text-center Government Officials
+        .row.text-center.columns
+          .col-md-12.col-lg-4
+            a(href='#')
+              .circ
+                img.circ(src='images/vit-jedlicka.jpg')
+              h5 Vít Jedlička
+              p President
+          .col-md-6.col-lg-4
+            a(href='#')
+              .circ
+                img.circ(src='images/Bogie.jpg')
+              h5 Bogie Wozniak
+              p Vice President
+          .col-md-6.col-lg-4
+            a(href='#')
+              .circ
+                img.circ(src='images/tariq.jpg')
+              h5 Tariq Abbasi
+              p Secretary of State
+        .row
+          .col-md-12
+            button.btn.btn-more.center-block The Whole Team
+    section#partners.bg-light
+      .container
+        .row
+          .col-md-12
+            h3.text-center Featured Partners
+        .row.text-center
+          .col-md-6.col-lg-2.col-lg-offset-1.wow.fadeInUp
+            a(href='#')
+              img(src='images/partners/universa.png')
+            p New generation crypto protocol
+          .col-md-6.col-lg-2.wow.fadeInUp.wait1
+            a(href='#')
+              img(src='images/partners/aragon.png')
+            p Company setup and maintenance
+          .col-md-6.col-lg-2.wow.fadeInUp.wait2
+            a(href='#')
+              img(src='images/partners/kleros.png')
+            p Distributed dispute resolution protocol
+          .col-md-6.col-lg-2.wow.fadeInUp.wait3
+            a(href='#')
+              img(src='images/partners/isolas.jpg')
+            p Short service description
+          .col-md-6.col-lg-2.wow.fadeInUp.wait4
+            a(href='#')
+              img(src='images/partners/bankera.png')
+            p Short service description
+        //
+          <div class="row">
+          <div class="col-md-12">
+          <button class="btn btn-more center-block">More Partners</button>
+          </div>
+          </div>
+    section#news.bg-yellow
+      .container
+        .row
+          .col-lg-12
+            h3.text-center News
+        .row
+          .col-sm-4
+            a(href='#')
+              img(src='images/news/somaliland.jpg')
+            h5
+              a(href='#') Mutual recognition process with the Republic of Somaliland
+            p
+              | BERBERA, SOMALILAND — The Free Republic of Liberland has successfully begun the mutual recognition process with the Republic of Somaliland and commenced cooperation on a number of important fronts. 
+              a.btn.btn-ellipsis(href='#') ⋯
+          .col-sm-4
+            a(href='#')
+              img(src='images/news/somaliland.jpg')
+            h5
+              a(href='#') Mutual recognition process with the Republic of Somaliland
+            p
+              | BERBERA, SOMALILAND — The Free Republic of Liberland has successfully begun the mutual recognition process with the Republic of Somaliland and commenced cooperation on a number of important fronts. 
+              a.btn.btn-ellipsis(href='#') ⋯
+          .col-sm-4
+            a(href='#')
+              img(src='images/news/somaliland.jpg')
+            h5
+              a(href='#') Mutual recognition process with the Republic of Somaliland
+            p
+              | BERBERA, SOMALILAND — The Free Republic of Liberland has successfully begun the mutual recognition process with the Republic of Somaliland and commenced cooperation on a number of important fronts. 
+              a.btn.btn-ellipsis(href='#') ⋯
+        .row
+          .col-md-12
+            button.btn.btn-more.center-block More News
+    section#media.bg-light
+      .container.text-center
+        .row
+          .col-lg-12
+            h3.text-center Media Coverage
+        .row.wow.fadeIn
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/observer.png', alt='observer logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/bloomberg.png', alt='bloomberg logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/cointelegraph.png', alt='cointelegraph logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/financefeeds.png', alt='financefeeds logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/crowdfundinsider.png', alt='crowdfundinsider logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/econotimes.png', alt='econotimes logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/coinidol.png', alt='coinidol logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/bitcoinx.png', alt='bitcoinx logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/yourpfpro.png', alt='yourpfpro logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/businessinsider.png', alt='businessinsider logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/financemagnates.png', alt='financemagnates logo')
+          .col-sm-3.col-xs-4
+            a(href='#', target='_blank')
+              img(src='images/publications/thenextweb.png', alt='thenextweb logo')
+          .col-sm-4.col-sm-offset-4.col-xs-4.col-xs-offset-4
+            a(href='#', target='_blank')
+              img(src='images/publications/btcmanager.png', alt='btcmanager logo')
+      .row
+        .col-md-12
+          button.btn.btn-more.center-block More from Media
+    footer
+      .container
+        .row
+          .col-md-4
+            h4 Links
+            ul
+              li
+                a(href='http://liberlandpress.com/') Liberland Press
+              li
+                a(href='https://www.facebook.com/liberland/') Liberland on facebook
+              li
+                a(href='https://twitter.com/Liberland_org') Liberland on Twitter
+          .col-md-4
+          .col-md-4.text-right
+            h4 Get a PDF Brochure
+            p By Subscribing to the Newsletter
+            .input-group
+              input.form-control(type='email', placeholder='your@email.here')
+              span.input-group-btn
+                button.btn.btn-ghost.text-right subscribe
+        .row
+          .col-sm-12
+            p
+              | © 
+              a.logo(href='#') Liberland
+              |  All rights reserved.
+    script(src='js/script.js')
+=======
 p This is the index page.
+>>>>>>> parent of 005ef4a... landing page pug

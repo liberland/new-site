@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="125px" height="125px" viewBox="1.5 -9.25 125 125" enable-background="new 1.5 -9.25 125 125" xml:space="preserve">
+<title>icon-e-res</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="icon-e-res" transform="translate(-15.000000, -33.000000)">
+		<rect id="Rectangle" x="16.5" y="23.75" fill="none" width="125" height="125"/>
+		<path id="Rectangle-9" fill="#35373A" d="M36.5,56.75h85c2.762,0,5,2.239,5,5v50c0,2.762-2.238,5-5,5h-85c-2.761,0-5-2.238-5-5
+			v-50C31.5,58.989,33.739,56.75,36.5,56.75z"/>
+		<path id="Rectangle-10" fill="#FFCB05" d="M47.5,80.75h11c1.104,0,2,0.896,2,2v8c0,1.104-0.896,2-2,2h-11c-1.104,0-2-0.896-2-2v-8
+			C45.5,81.646,46.396,80.75,47.5,80.75z"/>
+		<path id="Oval" fill="none" stroke="#FFFFFF" stroke-width="2" d="M105.5,97.75c6,0,10-1,10-9c0-10.493-8.507-19-19-19
+			s-19,8.507-19,19s8.507,19,19,19c4.993,0,9.536-1.926,12.928-5.076"/>
+		<polyline id="Path-2" fill="none" stroke="#FFFFFF" stroke-width="2" points="87.5,85.75 96.5,76.75 105.5,85.75 		"/>
+		<polyline id="Path-3" fill="none" stroke="#FFFFFF" stroke-width="2" points="105.5,97.75 90.5,97.75 90.5,84.75 		"/>
+		<path id="Line" fill="none" stroke="#FFFFFF" stroke-width="2" d="M102.5,84.75v14"/>
+	</g>
+</g>
+</svg>
