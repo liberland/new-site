@@ -10,7 +10,7 @@
     "author": "Liberland and the Community; Spearheaded by Luke Parker.",
     "license": "MIT",
     "dependencies": {
-        "clean-css": "^4.1.9",
+        "clean-css": "^4.1.11",
         "compression": "^1.7.1",
         "express": "^4.16.2",
         "express-device": "^0.4.2",
