@@ -1,3 +1,0 @@
-## SCSS Style/Convention Guide:
-
-Coming soon...
